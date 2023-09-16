@@ -1,15 +1,20 @@
 <template>
     <main class="hero min-h-screen">
-        <div class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+        <div class="grid grid-cols-1 md:grid-cols-2 min-h-screen ">
+            
+            <video playsinline autoplay muted loop poster="@/assets/hero_3d.png" id="bgvid" class="items-center">
+                <source src="@/assets/bg_crystal.mp4" type="video/mp4">
+            </video>
             <div class="flex items-center min-h-full min-w-full z-10">
                 <div class="mx-auto ">
-                    <div class="text-white">
-                        <h3 class="text-[40px] leading-[2rem]"><span class="text-[#D8D44E]">Hey </span> There,</h3>
-                        <h1 class="text-[70px] leading-[6rem]">I'm <span class="text-[#D8D44E]">Jazpen</span></h1>
+                    <div class="text-white hero_title">
+                        <h3 class="text-[30px] leading-[1rem] sm:text-[40px]"><span class="text-[#D8D44E]">Hey </span> There,</h3>
+                        <h1 class="text-[50px] leading-[5rem] sm:text-[70px]">I'm <span class="text-[#D8D44E]">Jazpen</span></h1>
                         <p class="text-[1.2rem]">Your <span class="text-[#D8D44E]">Web/software Developer</span></p>
+
+                        <button class="my-10">HIRE ME!</button>
                     </div>
-                    <button class="my-10">HIRE ME!</button>
-                    <div class="mt-10">
+                    <div class="mt-10 quote">
                         <h1>"I will make your ideas into reality."</h1>
                         <div class="flex gap-2 items-end mt-2" >
                             <svg width="20" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,6 +36,7 @@
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -42,14 +48,58 @@
     /* background: radial-gradient(182.34% 120.65% at 16.49% 6.35%, #2A003E 0%, #170C30 29.12%, #110123 60.38%); */
     background: url('@/assets/hero_3d.png') no-repeat center center;
     background-size: cover;
+    z-index: 100;
 }
 
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 @media screen and (max-width: 780px) {
     .hero{
-        background: url('@/assets/hero_3d.png') no-repeat center center;
-        background-size: 900px;
+        background: #000;
+    }
+    video {
+        object-fit: cover;
+        height: 70vh;
+        position: absolute;
+        top: 100px;
+        right: 0;
+    }
+
+    .quote{
+        position: absolute;
+        width: 100%;
+        height: 30vh;
+        padding: 20px 20px;
+        bottom: 0;
+        left: 0;
+    }
+
+    .hero_title{
+        position: absolute;
+        width: 100%;
+        padding: 20px 20px;
+        top: 100px;
+        left: 0;
     }
     
+        
+}
+
+@media screen and (max-width: 480px) {
+    video {
+        object-fit: cover;
+        height: 50vh;
+        position: absolute;
+        top: 200px;
+        right: 0;
+    }
+        
 }
 
 svg{
